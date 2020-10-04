@@ -32,7 +32,8 @@ for i in range(100):
 		lista.append([n,"fp mult", time_mult])
 		lista.append([n,"double add", time_soma_d])
 		lista.append([n,"double mult", time_mult_d])
+
 df = pd.DataFrame(lista, columns = "N,op,time(s)".split(","))
-sns.boxplot(x="N",y="time(s)", hue="op", data = df)
+sns.barplot(x="N",y="time(s)", hue="op", data = df)
 plt.show()
 pickle.dump( df, open("data.pkl","wb"))
