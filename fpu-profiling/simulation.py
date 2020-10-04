@@ -35,5 +35,6 @@ for i in range(100):
 
 df = pd.DataFrame(lista, columns = "N,op,time(s)".split(","))
 sns.barplot(x="N",y="time(s)", hue="op", data = df)
+plt.yscale('log')
 plt.show()
 pickle.dump( df, open("data.pkl","wb"))
